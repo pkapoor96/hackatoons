@@ -68,7 +68,7 @@ const UserNav: React.FC<{
                 <button
                   aria-label="Menu"
                   className={s.avatarButton}
-                  onClick={() => (isCustomerLoggedIn ? null : openModal())}
+                  onClick={() => (true ? null : openModal())}
                 >
                   <Avatar />
                 </button>

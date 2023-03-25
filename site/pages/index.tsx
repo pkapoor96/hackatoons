@@ -4,6 +4,8 @@ import { ProductCard } from '@components/product'
 import { Grid, Marquee, Hero } from '@components/ui'
 // import HomeAllProductsGrid from '@components/common/HomeAllProductsGrid'
 import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
+import Portal from '@components/toggle/portal'
+import ToggleWidget from '@components/toggle/toggleWidget'
 
 export async function getStaticProps({
   preview,
@@ -86,6 +88,9 @@ export default function Home({
         categories={categories}
         brands={brands}
       /> */}
+      <Portal>
+        <ToggleWidget />
+      </Portal>
     </>
   )
 }

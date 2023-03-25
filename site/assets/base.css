@@ -112,6 +112,10 @@ a {
   -webkit-animation-name: fadeIn;
 }
 
+.inactive {
+  opacity: 0;
+}
+
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;

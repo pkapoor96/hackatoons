@@ -7,7 +7,6 @@ import Image, { ImageProps } from 'next/image'
 import WishlistButton from '@components/wishlist/WishlistButton'
 import usePrice from '@framework/product/use-price'
 import ProductTag from '../ProductTag'
-import ProductSustainability from '../ProductSustainability'
 
 interface Props {
   className?: string

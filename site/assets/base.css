@@ -1,4 +1,4 @@
-:root {
+[data-theme='white'] {
   --primary: #ffffff;
   --primary-2: #f1f3f5;
   --secondary: #000000;
@@ -34,7 +34,7 @@
     'Helvetica', sans-serif;
 }
 
-[data-theme='dark'] {
+:root {
   --primary: #000000;
   --primary-2: #111;
   --secondary: #ffffff;

@@ -5,7 +5,8 @@ import s from './brightnessSlider.module.css'
 const BrightnessSlider = () => {
   const [brightnessVal, setBrightnessVal] = useState('100')
   useEffect(() => {
-    document.body.style.filter = `brightness(${brightnessVal}%)`
+    const container = document.getElementById('__next')?.style!
+    container.filter = `brightness(${brightnessVal}%)`
   }, [brightnessVal])
   return (
     <div className="flex items-center w-max mt-[28px]">

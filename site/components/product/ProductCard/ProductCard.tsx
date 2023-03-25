@@ -7,6 +7,7 @@ import Image, { ImageProps } from 'next/image'
 import WishlistButton from '@components/wishlist/WishlistButton'
 import usePrice from '@framework/product/use-price'
 import ProductTag from '../ProductTag'
+import ProductSustainability from '../ProductSustainability'
 
 interface Props {
   className?: string
@@ -108,6 +109,7 @@ const ProductCard: FC<Props> = ({
           <ProductTag
             name={product.name}
             price={`${price} ${product.price?.currencyCode}`}
+            ecorating={4}
           />
           <div className={s.imageContainer}>
             {product?.images && (

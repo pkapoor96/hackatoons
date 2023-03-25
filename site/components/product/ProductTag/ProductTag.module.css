@@ -29,3 +29,16 @@
   font-semibold inline-block tracking-wide;
   margin-top: -1px;
 }
+
+.root .rating {
+  display: inline-block;
+  margin-top: -1px;
+  background: black;
+  padding: 0.3rem 0.3rem 0.82rem 0.3rem;
+  & svg {
+    display: inline;
+    & path {
+      fill: white;
+    }
+  }
+}

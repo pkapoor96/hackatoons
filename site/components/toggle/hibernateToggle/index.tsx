@@ -6,7 +6,7 @@ const HibernateToggle = () => {
   const [isChecked, setIsChecked] = useState(false)
 
   useEffect(() => {
-    let inactivityTimeout
+    let inactivityTimeout: string | number | NodeJS.Timeout | undefined
 
     function resetInactivityTimeout() {
       clearTimeout(inactivityTimeout)

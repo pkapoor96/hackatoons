@@ -60,3 +60,14 @@
     @apply hidden;
   }
 }
+
+.sustainableCredits {
+  border: 1px solid #00925b;
+  border-radius: 40px;
+  background: rgba(96, 221, 77, 0.2);
+  color: #00925b;
+  padding: 4px 8px;
+  & svg {
+    display: inline-block;
+  }
+}

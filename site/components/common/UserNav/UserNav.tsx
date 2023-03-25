@@ -15,6 +15,7 @@ import {
 } from '@components/ui'
 
 import type { LineItem } from '@commerce/types/cart'
+import LeafFilled from '@components/icons/LeafFilled'
 
 const countItem = (count: number, item: LineItem) => count + item.quantity
 
@@ -34,6 +35,9 @@ const UserNav: React.FC<{
   return (
     <nav className={cn(s.root, className)}>
       <ul className={s.list}>
+        <span className={s.sustainableCredits}>
+          <LeafFilled /> 60 sustainable credits
+        </span>
         {process.env.COMMERCE_CART_ENABLED && (
           <li className={s.item}>
             <Button

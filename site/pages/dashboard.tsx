@@ -4,6 +4,8 @@ import { offers } from '@components/dashboard/mocks/offers'
 import OfferCard from '@components/dashboard/offerCard'
 import Bell from '@components/icons/Bell'
 import Bookmark from '@components/icons/Bookmark'
+import Portal from '@components/toggle/portal'
+import ToggleWidget from '@components/toggle/toggleWidget'
 import { useEffect, useState } from 'react'
 
 export default function Dashboard() {
@@ -39,7 +41,7 @@ export default function Dashboard() {
       <div className="xl:container mx-auto">
         <h1 className="font-bold text-[36px] leading-[54px] mt-[48px]">
           Hi Katie, you have earned{' '}
-          <span className="text-[#00925B]">{`${creditScore} sustainability`}</span>{' '}
+          <span className="text-[#60DD4D]">{`${creditScore} sustainability`}</span>{' '}
           points!
         </h1>
         <p className="font-semibold text-[20px] leading-[30px] text-[#B1B1B1]">
@@ -52,7 +54,7 @@ export default function Dashboard() {
                 <li
                   className={`px-[28px] border-r border-solid border-r-[#BBBBBB] cursor-pointer last:border-none ${
                     category === keyName
-                      ? 'font-semibold text-[20px] leading-[30px] '
+                      ? 'font-semibold text-[20px] leading-[24px] text-[#60C689]'
                       : 'font-medium text-[16px] leading-[24px]'
                   }`}
                   key={keyName}

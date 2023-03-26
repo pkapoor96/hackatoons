@@ -11,7 +11,7 @@ const ToggleWidget = () => {
   return (
     <div className="fixed right-[54px] bottom-[20px]">
       <div
-        className={`border-[1.2px] border-solid border-[#2568FB] rounded-[4.8px] absolute bottom-[85px] right-0 py-[28px] px-[16px] bg-white ${
+        className={`border-[1.2px] border-solid border-[#60C689] rounded-[4.8px] absolute bottom-[85px] right-0 py-[28px] px-[16px] bg-white ${
           isToggleOpen ? 'block' : 'hidden'
         }`}
       >
@@ -20,16 +20,16 @@ const ToggleWidget = () => {
         <BrightnessSlider />
       </div>
 
-      <div className="border-[1px] border-solid border-[#2568FB] rounded-[4px] w-max flex flex-col items-center bg-white">
+      <div className="border-[1px] border-solid border-[#60C689] rounded-[4px] w-max flex flex-col items-center bg-white">
         <button
-          className="p-[10px] rounded-[0 0 4.8px 4.8px] bg-[#2568FB] text-white hover:bg-[#0038B2]"
+          className="p-[10px] rounded-[0 0 4.8px 4.8px] bg-[#60C689] text-white hover:bg-[#00925B]"
           onClick={() => setIsToggleOpen(!isToggleOpen)}
         >
           {isToggleOpen ? <Cross /> : <Plus />}
         </button>
         <Link href="/dashboard" className="flex flex-col items-center">
           <Insight />
-          <span className="leading-[15px] font-medium text-[#2568FB] text-[10px] cursor-pointer">
+          <span className="leading-[15px] font-medium text-[#60C689] text-[10px] cursor-pointer">
             Insights
           </span>
         </Link>

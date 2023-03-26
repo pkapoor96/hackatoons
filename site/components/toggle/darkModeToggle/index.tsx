@@ -17,8 +17,8 @@ const DarkModeToggle = () => {
 
   return (
     <div className="flex items-center w-full">
-      <Moon stroke="#2568FB" className="mr-[10px]" />
-      <label className="leading-[18px] text-[12px] font-medium text-[#2568FB] mr-[10px]">
+      <Moon stroke="#60C689" className="mr-[10px]" />
+      <label className="leading-[18px] text-[12px] font-medium text-[#60C689] mr-[10px]">
         Light Mode
       </label>
       <label className={s.toggle}>

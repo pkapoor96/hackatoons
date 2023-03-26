@@ -30,13 +30,13 @@
   width: 8.5px;
   left: 2px;
   bottom: 2px;
-  background-color: #2568fb;
+  background-color: #60c689;
   transition: 0.4s;
   border-radius: 50%;
 }
 
 .toggle input:checked + .slider {
-  background-color: #2568fb;
+  background-color: #60c689;
   border: 1px solid transparent;
 }
 

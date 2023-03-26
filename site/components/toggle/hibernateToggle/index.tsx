@@ -1,9 +1,12 @@
 import Power from '@components/icons/Power'
-import { useEffect, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
+import { ToggleWidgetTypes } from '../toggleWidget/ToggleWidget.type'
 import s from './hibernateToggle.module.css'
 
-const HibernateToggle = () => {
-  const [isChecked, setIsChecked] = useState(false)
+const HibernateToggle: FC<ToggleWidgetTypes> = ({ toggleParamRef }) => {
+  const [isChecked, setIsChecked] = useState(
+    toggleParamRef.current.hibernateChecked
+  )
 
   useEffect(() => {
     let inactivityTimeout: string | number | NodeJS.Timeout | undefined
@@ -29,6 +32,12 @@ const HibernateToggle = () => {
       document.removeEventListener('keydown', resetInactivityTimeout)
       document.body?.classList?.remove('inactive')
       clearTimeout(inactivityTimeout)
+    }
+
+    //set ref value
+    toggleParamRef.current = {
+      ...toggleParamRef.current,
+      hibernateChecked: isChecked,
     }
 
     // Clean up the event listeners when the component unmounts

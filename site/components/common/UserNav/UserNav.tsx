@@ -50,9 +50,11 @@ const UserNav: React.FC<{
   return (
     <nav className={cn(s.root, className)}>
       <ul className={s.list}>
-        <span className={s.sustainableCredits}>
-          <LeafFilled /> {creditScore} sustainable credits
-        </span>
+        <Link href="/dashboard" className="flex flex-col items-center">
+          <span className={s.sustainableCredits}>
+            <LeafFilled /> {creditScore} sustainable credits
+          </span>
+        </Link>
         {process.env.COMMERCE_CART_ENABLED && (
           <li className={s.item}>
             <Button

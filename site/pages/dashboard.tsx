@@ -7,6 +7,7 @@ import Bookmark from '@components/icons/Bookmark'
 import Portal from '@components/toggle/portal'
 import ToggleWidget from '@components/toggle/toggleWidget'
 import { useEffect, useState } from 'react'
+import { Hackatoons } from '@components/icons'
 
 export default function Dashboard() {
   const [category, setCategory] = useState('all')
@@ -29,7 +30,12 @@ export default function Dashboard() {
     <>
       <div className="xl:container mx-auto">
         <nav className="flex justify-between items-center py-[20px]">
-          <div className="font-semibold text-[20px] leading-[30px]">Logo</div>
+          <div className="font-semibold text-[20px] leading-[30px]">
+            <Hackatoons
+              className="inline-block h-6 ml-3 text-primary"
+              alt="Hackatoons.com Logo"
+            />
+          </div>
           <div className="flex items-center">
             <Bookmark fill="white" className="mr-[10px]" />
             <Bell fill="white" className="mr-[10px]" />

@@ -18,7 +18,7 @@ const ConfimationPopup: FC<ConfimationPopupTypes> = ({
   deductionAmount,
 }) => {
   const rootClassName = cn(s.root, className)
-  const updateCreditScore = (amount: number) => {
+  const updateCreditScore = (amount: number, stayOnSamePage?: boolean) => {
     fetch('http://3.128.153.4:3001/updateCreditScore', {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
@@ -32,7 +32,7 @@ const ConfimationPopup: FC<ConfimationPopupTypes> = ({
     })
       .then((res) => res.json())
       .catch((err) => console.log(err))
-    window.history.back()
+    !stayOnSamePage && window.history.back()
   }
 
   return (
@@ -44,7 +44,7 @@ const ConfimationPopup: FC<ConfimationPopupTypes> = ({
         <div className={s.modalContent}>
           <button
             onClick={() => {
-              updateCreditScore(deductionAmount)
+              updateCreditScore(deductionAmount, true)
               closePopup()
             }}
             className={s.close}

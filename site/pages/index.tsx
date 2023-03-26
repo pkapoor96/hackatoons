@@ -92,9 +92,6 @@ export default function Home({
         categories={categories}
         brands={brands}
       /> */}
-      <Portal>
-        <ToggleWidget />
-      </Portal>
     </>
   )
 }

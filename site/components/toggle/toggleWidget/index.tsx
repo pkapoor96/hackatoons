@@ -1,12 +1,13 @@
 import { Cross, Plus } from '@components/icons'
 import Insight from '@components/icons/Insight'
 import Link from 'next/link'
-import { useState } from 'react'
+import { FC, useState } from 'react'
 import BrightnessSlider from '../brightnessSlider'
 import DarkModeToggle from '../darkModeToggle'
 import HibernateToggle from '../hibernateToggle'
+import { ToggleWidgetTypes } from './ToggleWidget.type'
 
-const ToggleWidget = () => {
+const ToggleWidget: FC<ToggleWidgetTypes> = ({ toggleParamRef }) => {
   const [isToggleOpen, setIsToggleOpen] = useState(false)
   return (
     <div className="fixed right-[54px] bottom-[20px]">
@@ -15,9 +16,9 @@ const ToggleWidget = () => {
           isToggleOpen ? 'block' : 'hidden'
         }`}
       >
-        <DarkModeToggle />
-        <HibernateToggle />
-        <BrightnessSlider />
+        <DarkModeToggle toggleParamRef={toggleParamRef} />
+        <HibernateToggle toggleParamRef={toggleParamRef} />
+        <BrightnessSlider toggleParamRef={toggleParamRef} />
       </div>
 
       <div className="border-[1px] border-solid border-[#60C689] rounded-[4px] w-max flex flex-col items-center bg-white">

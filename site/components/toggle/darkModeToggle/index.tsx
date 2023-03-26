@@ -1,10 +1,13 @@
 import { Moon } from '@components/icons'
 import { useToggleTheme } from '@lib/hooks/useToggleTheme'
-import { useEffect, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import s from '../hibernateToggle/hibernateToggle.module.css'
+import { ToggleWidgetTypes } from '../toggleWidget/ToggleWidget.type'
 
-const DarkModeToggle = () => {
-  const [isChecked, setIsChecked] = useState(false)
+const DarkModeToggle: FC<ToggleWidgetTypes> = ({ toggleParamRef }) => {
+  const [isChecked, setIsChecked] = useState(
+    toggleParamRef.current.darkModeChecked
+  )
   const { theme, setTheme } = useToggleTheme()
 
   useEffect(() => {
@@ -12,6 +15,10 @@ const DarkModeToggle = () => {
       setTheme(theme === 'dark' ? 'light' : 'dark')
     } else {
       setTheme('dark')
+    }
+    toggleParamRef.current = {
+      ...toggleParamRef.current,
+      darkModeChecked: isChecked,
     }
   }, [isChecked])
 

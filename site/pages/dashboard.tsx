@@ -1,7 +1,7 @@
 import { Avatar } from '@components/common'
 import { categories } from '@components/dashboard/mocks/category'
 import { offers } from '@components/dashboard/mocks/offers'
-import OfferCard from '@components/dashboard/OfferCard'
+import OfferCard from '@components/dashboard/offerCard'
 import Bell from '@components/icons/Bell'
 import Bookmark from '@components/icons/Bookmark'
 import Portal from '@components/toggle/portal'

@@ -8,12 +8,14 @@ interface ConfimationPopupTypes {
   className?: string
   closePopup: any
   isModalOpen: boolean
+  deductionAmount: number
 }
 
 const ConfimationPopup: FC<ConfimationPopupTypes> = ({
   closePopup,
   className,
   isModalOpen,
+  deductionAmount,
 }) => {
   const rootClassName = cn(s.root, className)
   const updateCreditScore = (amount: number) => {
@@ -42,7 +44,7 @@ const ConfimationPopup: FC<ConfimationPopupTypes> = ({
           <div>
             <button
               onClick={() => {
-                updateCreditScore(20)
+                updateCreditScore(deductionAmount)
                 closePopup()
               }}
               className={s.close}
@@ -54,7 +56,7 @@ const ConfimationPopup: FC<ConfimationPopupTypes> = ({
               width="70%"
               variant="slim"
               className=""
-              onClick={() => updateCreditScore(20)}
+              onClick={() => updateCreditScore(deductionAmount)}
             >
               Back to Shopping
             </Button>

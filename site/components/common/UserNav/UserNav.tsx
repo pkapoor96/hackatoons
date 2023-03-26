@@ -51,7 +51,7 @@ const UserNav: React.FC<{
     <nav className={cn(s.root, className)}>
       <ul className={s.list}>
         <Link href="/dashboard" className="flex flex-col items-center">
-          <span className={s.sustainableCredits}>
+          <span className={`${s.sustainableCredits} font-medium`}>
             <LeafFilled /> {creditScore} sustainable credits
           </span>
         </Link>

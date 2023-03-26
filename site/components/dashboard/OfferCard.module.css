@@ -1,6 +1,10 @@
+.root .deductionAmount {
+  color: #60c689;
+}
+
 .root .buyButton {
-  border: 1px solid #2568fb;
-  color: #2568fb;
+  border: 1px solid #60c689;
+  color: #60c689;
   padding: 8px 0;
   border-radius: 4px;
 }

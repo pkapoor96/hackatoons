@@ -86,6 +86,7 @@ export default function Dashboard() {
                   title={offer.offerTitle}
                   companyName={offer.partyOffering}
                   key={offer.offerTitle}
+                  deductionAmount={offer.deductionAmount}
                   setScoreUpdated={setScoreUpdated}
                 />
               )

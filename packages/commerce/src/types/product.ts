@@ -85,6 +85,7 @@ export interface ProductVariant {
 }
 
 export interface Product {
+  ecoRating: number | undefined
   /**
    *  The unique identifier for the product.
    */

@@ -108,7 +108,7 @@ const ProductCard: FC<Props> = ({
           <ProductTag
             name={product.name}
             price={`${price} ${product.price?.currencyCode}`}
-            ecorating={4}
+            ecoRating={product.ecoRating}
           />
           <div className={s.imageContainer}>
             {product?.images && (

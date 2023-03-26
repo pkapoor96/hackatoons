@@ -7,27 +7,27 @@ interface ProductTagProps {
   className?: string
   name: string
   price: string
-  ecorating?: number
+  ecoRating?: number
   fontSize?: number
 }
 
 const ProductTag: React.FC<ProductTagProps> = ({
   name,
   price,
-  ecorating,
+  ecoRating,
   className = '',
   fontSize = 32,
 }) => {
-  function renderProductSustainability(ecorating: number) {
+  function renderProductSustainability(ecoRating: number) {
     var ratingArray = []
-    for (var i = 1; i <= ecorating; i++) {
+    for (var i = 1; i <= ecoRating; i++) {
       ratingArray.push(
         <div className={s.rating}>
           <LeafFilled />
         </div>
       )
     }
-    for (var i = 1; i <= 5 - ecorating; i++) {
+    for (var i = 1; i <= 5 - ecoRating; i++) {
       ratingArray.push(
         <div className={s.rating}>
           <LeafEmpty />
@@ -51,7 +51,7 @@ const ProductTag: React.FC<ProductTagProps> = ({
         </span>
       </h3>
       <div className={s.price}>{price}</div>
-      {ecorating && renderProductSustainability(ecorating)}
+      {ecoRating && renderProductSustainability(ecoRating)}
     </div>
   )
 }

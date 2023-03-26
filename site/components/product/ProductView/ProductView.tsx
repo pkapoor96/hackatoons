@@ -31,7 +31,7 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
               name={product.name}
               price={`${price} ${product.price?.currencyCode}`}
               fontSize={32}
-              ecorating={5}
+              ecoRating={product.ecoRating}
             />
             <div className={s.sliderContainer}>
               <ProductSlider key={product.id}>

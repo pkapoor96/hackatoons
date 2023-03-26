@@ -3,6 +3,7 @@
     {
       "id": "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzU0NDczMjUwMjQ0MjA=",
       "name": "New Short Sleeve T-Shirt",
+      "ecoRating": "3",
       "vendor": "Next.js",
       "path": "/new-short-sleeve-t-shirt",
       "slug": "new-short-sleeve-t-shirt",
@@ -79,6 +80,7 @@
     {
       "id": "Z2lkOi8vc2hvcGlmeS9Qcm9ksdWN0LzU0NDczMjUwMjQ0MjA=",
       "name": "Lightweight Jacket",
+      "ecoRating": "4",
       "vendor": "Next.js",
       "path": "/lightweight-jacket",
       "slug": "lightweight-jacket",
@@ -155,6 +157,7 @@
     {
       "id": "Z2lkOis8vc2hvcGlmsddeS9Qcm9kdWN0LzU0NDczMjUwMjQ0MjA=",
       "name": "Shirt",
+      "ecoRating": "5",
       "vendor": "Next.js",
       "path": "/shirt",
       "slug": "shirt",

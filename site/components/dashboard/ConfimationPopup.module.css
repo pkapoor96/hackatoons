@@ -22,6 +22,28 @@
 
 .root .modalBody {
   color: var(--secondary);
+  text-align: center;
+  margin: 0 auto;
+}
+
+.root .modalDiv {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.root .modalDiv img {
+  margin: 65px auto 25px auto;
+}
+
+.root .modalDiv button {
+  margin: 12px auto 30px auto;
+}
+
+.root .modalText {
+  color: #60dd4d;
+  margin: 18px auto;
 }
 
 .root .close {

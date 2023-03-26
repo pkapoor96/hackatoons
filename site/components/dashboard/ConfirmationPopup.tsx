@@ -2,7 +2,7 @@ import { FC } from 'react'
 import s from './ConfimationPopup.module.css'
 import cn from 'clsx'
 import { Button } from '@components/ui'
-import Link from 'next/link'
+import Image from 'next/image'
 
 interface ConfimationPopupTypes {
   className?: string
@@ -41,21 +41,33 @@ const ConfimationPopup: FC<ConfimationPopupTypes> = ({
         className={`${isModalOpen ? s.show : s.hide} ${s.modal}`}
       >
         <div className={s.modalContent}>
-          <div>
-            <button
-              onClick={() => {
-                updateCreditScore(deductionAmount)
-                closePopup()
-              }}
-              className={s.close}
-            >
-              <span>&times;</span>
-            </button>
-            <p className={s.modalBody}>Some text in the Modal..</p>
+          <button
+            onClick={() => {
+              updateCreditScore(deductionAmount)
+              closePopup()
+            }}
+            className={s.close}
+          >
+            <span>&times;</span>
+          </button>
+          <div className={s.modalDiv}>
+            <Image
+              src={'/assets/coupon.png'}
+              alt={'offer image'}
+              width={150}
+              height={150}
+              quality="85"
+            />
+            <p className={`${s.modalBody} text-[20px] font-medium`}>
+              Thank you for being a steward of the planet and making sustainable
+              choices.
+            </p>
+            <p className={`${s.modalText} text-[20px] font-medium`}>
+              Check our discount coupon in your inbox!
+            </p>
             <Button
               width="70%"
               variant="slim"
-              className=""
               onClick={() => updateCreditScore(deductionAmount)}
             >
               Back to Shopping

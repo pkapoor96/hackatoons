@@ -33,7 +33,7 @@
 .root .rating {
   display: inline-block;
   margin-top: -1px;
-  background: black;
+  background: var(--primary);
   padding: 0.3rem 0.3rem 0.82rem 0.3rem;
   & svg {
     display: inline;

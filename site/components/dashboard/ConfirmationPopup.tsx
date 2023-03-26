@@ -32,6 +32,7 @@ const ConfimationPopup: FC<ConfimationPopupTypes> = ({
     })
       .then((res) => res.json())
       .catch((err) => console.log(err))
+    window.history.back()
   }
 
   return (

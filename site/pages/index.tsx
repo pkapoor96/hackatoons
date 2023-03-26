@@ -66,32 +66,9 @@ export default function Home({
         ))}
       </Marquee>
       <Hero
-        headline="Sustainability is in style!"
+        headline="Help us be sustainable!"
         description="Join our loyalty program and earn rewards while you shop sustainably, making a positive impact on the planet has never been so rewarding!"
       />
-      <Grid layout="B" variant="filled">
-        {products.slice(0, 3).map((product: any, i: number) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-            imgProps={{
-              alt: product.name,
-              width: i === 1 ? 1080 : 540,
-              height: i === 1 ? 1080 : 540,
-            }}
-          />
-        ))}
-      </Grid>
-      <Marquee>
-        {products.slice(3).map((product: any, i: number) => (
-          <ProductCard key={product.id} product={product} variant="slim" />
-        ))}
-      </Marquee>
-      {/* <HomeAllProductsGrid
-        newestProducts={products}
-        categories={categories}
-        brands={brands}
-      /> */}
     </>
   )
 }

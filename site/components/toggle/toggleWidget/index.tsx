@@ -1,5 +1,6 @@
 import { Cross, Plus } from '@components/icons'
 import Insight from '@components/icons/Insight'
+import Link from 'next/link'
 import { useState } from 'react'
 import BrightnessSlider from '../brightnessSlider'
 import DarkModeToggle from '../darkModeToggle'
@@ -26,10 +27,12 @@ const ToggleWidget = () => {
         >
           {isToggleOpen ? <Cross /> : <Plus />}
         </button>
-        <Insight />
-        <span className="leading-[15px] font-medium text-[#2568FB] text-[10px]">
-          Insights
-        </span>
+        <Link href="/dashboard" className="flex flex-col items-center">
+          <Insight />
+          <span className="leading-[15px] font-medium text-[#2568FB] text-[10px] cursor-pointer">
+            Insights
+          </span>
+        </Link>
       </div>
     </div>
   )

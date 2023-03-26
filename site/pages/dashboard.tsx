@@ -12,6 +12,7 @@ import { Hackatoons } from '@components/icons'
 export default function Dashboard() {
   const [category, setCategory] = useState('all')
   const [creditScore, setCreditScore] = useState(0)
+  const [scoreUpdated, setScoreUpdated] = useState(false)
 
   useEffect(() => {
     fetch('http://3.128.153.4:3001/creditScore?userId=nangarg', {
@@ -23,9 +24,10 @@ export default function Dashboard() {
       .then((res) => res.json())
       .then((data) => {
         setCreditScore(data.creditScore)
+        setScoreUpdated(false)
       })
       .catch((err) => console.log(err))
-  }, [])
+  }, [scoreUpdated === true, []])
   return (
     <>
       <div className="xl:container mx-auto">
@@ -46,7 +48,7 @@ export default function Dashboard() {
       <div className="border-[0.5px] border-solid border-[#DCDCDC]" />
       <div className="xl:container mx-auto">
         <h1 className="font-bold text-[36px] leading-[54px] mt-[48px]">
-          Hi Katie, you have earned{' '}
+          Hi Nigel, you have earned{' '}
           <span className="text-[#60DD4D]">{`${creditScore} sustainability`}</span>{' '}
           points!
         </h1>
@@ -84,6 +86,7 @@ export default function Dashboard() {
                   title={offer.offerTitle}
                   companyName={offer.partyOffering}
                   key={offer.offerTitle}
+                  setScoreUpdated={setScoreUpdated}
                 />
               )
             })}

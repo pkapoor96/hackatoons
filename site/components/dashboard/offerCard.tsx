@@ -12,6 +12,7 @@ interface OfferCardTypes {
   imagePath: string
   title: string
   companyName: string
+  setScoreUpdated: any
 }
 
 const OfferCard: FC<OfferCardTypes> = ({
@@ -19,6 +20,7 @@ const OfferCard: FC<OfferCardTypes> = ({
   title,
   companyName,
   className,
+  setScoreUpdated,
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const rootClassName = cn(s.root, className)
@@ -29,6 +31,7 @@ const OfferCard: FC<OfferCardTypes> = ({
 
   const closePopup = () => {
     setIsModalOpen(false)
+    setScoreUpdated(true)
   }
 
   return (

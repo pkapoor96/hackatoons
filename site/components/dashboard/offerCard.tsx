@@ -68,7 +68,11 @@ const OfferCard: FC<OfferCardTypes> = ({
           <Arrow />
         </Button>
 
-        <ConfimationPopup closePopup={closePopup} isModalOpen={isModalOpen} />
+        <ConfimationPopup
+          closePopup={closePopup}
+          isModalOpen={isModalOpen}
+          deductionAmount={deductionAmount}
+        />
       </div>
     </div>
   )

@@ -7,7 +7,7 @@ import { useUI } from '@components/ui/context'
 import { Heart, Bag, Menu } from '@components/icons'
 import CustomerMenuContent from './CustomerMenuContent'
 import useCustomer from '@framework/customer/use-customer'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import {
   Dropdown,
   DropdownTrigger as DropdownTriggerInst,
@@ -23,6 +23,7 @@ const UserNav: React.FC<{
   className?: string
 }> = ({ className }) => {
   const { data } = useCart()
+  const [creditScore, setCreditScore] = useState(Number)
   const { data: isCustomerLoggedIn } = useCustomer()
   const { closeSidebarIfPresent, openModal, setSidebarView, openSidebar } =
     useUI()
@@ -32,11 +33,25 @@ const UserNav: React.FC<{
     ? DropdownTriggerInst
     : React.Fragment
 
+  useEffect(() => {
+    fetch('http://3.128.153.4:3001/creditScore?userId=nangarg', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setCreditScore(data.creditScore)
+      })
+      .catch((err) => console.log(err))
+  }, [])
+
   return (
     <nav className={cn(s.root, className)}>
       <ul className={s.list}>
         <span className={s.sustainableCredits}>
-          <LeafFilled /> 60 sustainable credits
+          <LeafFilled /> {creditScore} sustainable credits
         </span>
         {process.env.COMMERCE_CART_ENABLED && (
           <li className={s.item}>

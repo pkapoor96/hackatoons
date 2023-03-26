@@ -43,8 +43,8 @@ export default function Home({
   return (
     <>
       <Hero
-        headline=" Dessert dragée halvah croissant."
-        description="Cupcake ipsum dolor sit amet lemon drops pastry cotton candy. Sweet carrot cake macaroon bonbon croissant fruitcake jujubes macaroon oat cake. Soufflé bonbon caramels jelly beans. Tiramisu sweet roll cheesecake pie carrot cake. "
+        headline="Sustainability is in style!"
+        description="Our products have been rated for their sustainability, allowing you to shop with confidence and reduce your carbon footprint. By choosing these products, you can help preserve our planet for future generations. Join us in making a difference today!"
       />
       <Grid variant="filled">
         {products.slice(0, 3).map((product: any, i: number) => (
@@ -66,8 +66,8 @@ export default function Home({
         ))}
       </Marquee>
       <Hero
-        headline=" Dessert dragée halvah croissant."
-        description="Cupcake ipsum dolor sit amet lemon drops pastry cotton candy. Sweet carrot cake macaroon bonbon croissant fruitcake jujubes macaroon oat cake. Soufflé bonbon caramels jelly beans. Tiramisu sweet roll cheesecake pie carrot cake. "
+        headline="Sustainability is in style!"
+        description="Join our loyalty program and earn rewards while you shop sustainably, making a positive impact on the planet has never been so rewarding!"
       />
       <Grid layout="B" variant="filled">
         {products.slice(0, 3).map((product: any, i: number) => (

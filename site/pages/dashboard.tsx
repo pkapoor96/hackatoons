@@ -4,10 +4,25 @@ import { offers } from '@components/dashboard/mocks/offers'
 import OfferCard from '@components/dashboard/offerCard'
 import Bell from '@components/icons/Bell'
 import Bookmark from '@components/icons/Bookmark'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function Dashboard() {
   const [category, setCategory] = useState('all')
+  const [creditScore, setCreditScore] = useState(0)
+
+  useEffect(() => {
+    fetch('http://3.128.153.4:3001/creditScore?userId=nangarg', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setCreditScore(data.creditScore)
+      })
+      .catch((err) => console.log(err))
+  }, [])
   return (
     <>
       <div className="xl:container mx-auto">
@@ -24,7 +39,8 @@ export default function Dashboard() {
       <div className="xl:container mx-auto">
         <h1 className="font-bold text-[36px] leading-[54px] mt-[48px]">
           Hi Katie, you have earned{' '}
-          <span className="text-[#00925B]">60 sustainability</span> points!
+          <span className="text-[#00925B]">{`${creditScore} sustainability`}</span>{' '}
+          points!
         </h1>
         <p className="font-semibold text-[20px] leading-[30px] text-[#B1B1B1]">
           Redeem your points and get exclusive discounts with our coupons now.

@@ -68,6 +68,7 @@ export default function Home({
       <Hero
         headline="Help us be sustainable!"
         description="Join our loyalty program and earn rewards while you shop sustainably, making a positive impact on the planet has never been so rewarding!"
+        isMid
       />
     </>
   )

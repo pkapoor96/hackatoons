@@ -11,7 +11,9 @@ interface HeroProps {
 
 const Hero: FC<HeroProps> = ({ headline, description }) => {
   return (
-    <div className="bg-accent-9 border-b border-t border-accent-2">
+    <div
+      className={`bg-accent-9 border-b border-t border-accent-2 ${s['pic-container']}`}
+    >
       <Container>
         <div className={s.root}>
           <h2 className={s.title}>{headline}</h2>

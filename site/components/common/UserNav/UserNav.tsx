@@ -34,12 +34,15 @@ const UserNav: React.FC<{
     : React.Fragment
 
   useEffect(() => {
-    fetch('http://3.128.153.4:3001/creditScore?userId=nangarg', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
+    fetch(
+      'https://nestjs-app-lb-2079032137.us-east-2.elb.amazonaws.com/creditScore?userId=nangarg',
+      {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         setCreditScore(data.creditScore)

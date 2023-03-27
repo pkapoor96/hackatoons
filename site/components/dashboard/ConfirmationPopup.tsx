@@ -19,17 +19,20 @@ const ConfimationPopup: FC<ConfimationPopupTypes> = ({
 }) => {
   const rootClassName = cn(s.root, className)
   const updateCreditScore = (amount: number, stayOnSamePage?: boolean) => {
-    fetch('http://3.128.153.4:3001/updateCreditScore', {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        details: {
-          userId: 'nangarg',
-          activity: 'redeem',
-          value: amount,
-        },
-      }),
-    })
+    fetch(
+      'https://nestjs-app-lb-2079032137.us-east-2.elb.amazonaws.com/updateCreditScore',
+      {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          details: {
+            userId: 'nangarg',
+            activity: 'redeem',
+            value: amount,
+          },
+        }),
+      }
+    )
       .then((res) => res.json())
       .catch((err) => console.log(err))
     !stayOnSamePage && window.history.back()

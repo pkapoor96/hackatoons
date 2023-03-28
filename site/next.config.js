@@ -8,12 +8,30 @@ const isSaleor = provider === '@vercel/commerce-saleor'
 const isSwell = provider === '@vercel/commerce-swell'
 const isVendure = provider === '@vercel/commerce-vendure'
 
+const securityHeaders = [
+  {
+    key: 'Referrer-Policy',
+    value: 'unsafe-url',
+  },
+]
+
 module.exports = withCommerceConfig({
   commerce,
   i18n: {
     locales: ['en-US', 'es'],
     defaultLocale: 'en-US',
   },
+
+  async headers() {
+    return [
+      {
+        // Apply these headers to all routes in your application.
+        source: '/:path*',
+        headers: securityHeaders,
+      },
+    ]
+  },
+
   rewrites() {
     return [
       (isBC || isShopify || isSwell || isVendure || isSaleor) && {
